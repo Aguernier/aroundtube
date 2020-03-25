@@ -1,0 +1,13 @@
+#map{ 
+    height: 100vh;
+}
+.videoListMarker{
+    max-height: 200px;
+    overflow-y: scroll;
+}
+.videoListMarker .media {
+    width: 300px;
+}
+.videoListMarker .media-body {
+    width: 200px;
+}

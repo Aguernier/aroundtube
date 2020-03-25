@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AroundTube</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <h1>AroundTube</h1>
+                <p class="lead">What are the tubes around me ?</p>
+                
+                <button id="authorizeButton" class="btn btn-success">Authorize and load YT</button>
+                <button id="signoutButton" class="btn btn-warning" style="display: none;">Sign Out YT</button>
+
+                <div id="userInfo">
+                    <span></span>
+                    <img src="" alt="">
+                </div>
+                <hr>
+                <form id="searchGeolocation">
+                    <div class="form-group">
+                        <label for="searchAdress">Rechercher une adresse</label>
+                        <input type="text" class="form-control" id="searchAddress">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Rechercher</button>
+                </form>
+                <hr>
+                <form id="searchAroundTube" style="display: none;">
+                    <div class="form-group">
+                        <label for="userLatitude">Latitude</label>
+                        <input type="text" class="form-control" id="userLatitude">
+                    </div>
+                    <div class="form-group">
+                        <label for="userLongitude">Longitude</label>
+                        <input type="text" class="form-control" id="userLongitude">
+                    </div>
+                    <div class="form-group">
+                        <label for="user_latitude">Distance</label>
+                        <div class="input-group">
+                            <input type="number" max="20" class="form-control" id="distance" value="10">
+                            <div class="input-group-append">
+                                <div class="input-group-text">km</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button role="button" class="btn btn-primary">Recherher les vidéos</button>
+                </form>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a data-prev-page-token="null" class="page-link" href="#" disabled="disabled">Précédent</a></li>
+                        <li class="page-item"><a data-next-page-token="null" class="page-link" href="#" disabled="disabled">Suivant</a></li>
+                    </ul>
+                </nav>
+                <hr>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="https://developers.google.com/youtube" target="_blank"><img class="d-block mx-auto" src="/assets/img/developed-with-youtube-sentence-case-dark.png" alt="" height="50px"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-9">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="/assets/js/app.js"></script>
+</body>
+</html>
